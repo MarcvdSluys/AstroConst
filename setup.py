@@ -5,7 +5,7 @@
 
 
 # Package version:
-version='0.0.0'
+version='0.0.1'
 
 # Get long description from README.md:
 with open('README.md', 'r') as fh:
@@ -20,7 +20,7 @@ setup(
     url='https://github.com/MarcvdSluys/AstroConst',
     
     packages=['astroconst'],
-    install_requires=[''],
+    install_requires=['numpy'],
     long_description=long_description,
     long_description_content_type='text/markdown',
     

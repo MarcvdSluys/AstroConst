@@ -105,14 +105,16 @@ mlen = __np.array([31,28,31,30,31,30,31,31,30,31,30,31]);  """Length of the mont
 # Length of a day:
 day_sid = 0.997269663;                  """Siderial day in days"""
 day_sol = 8.64e4;                       """Solar day = 86400 s"""
+day     = day_sol;                      """Default day := solar day = 86400 s"""
 
 # Length of a month:
-month_greg = 30.4369       * day_sol;   """Gregorian month in seconds:    average calendar month length of 4800 months over 400 years, for J2000.0"""
-month_sid  = 27.321661547  * day_sol;   """Sidereal month in seconds:     fixed star to fixed star, for J2000.0"""
-month_trop = 27.321582241  * day_sol;   """Tropical month in seconds:     equinox to equinox, influenced by precession, for J2000.0"""
-month_ano  = 27.554549878  * day_sol;   """Anomalistic month in seconds:  apside to apside, for J2000.0"""
-month_drac = 27.212220817  * day_sol;   """Draconic month in seconds:     node to node, for J2000.0"""
-month_syn  = 29.530588853  * day_sol;   """Synodic month in seconds:      phase to phase, for J2000.0"""
+month_greg = 30.4369       * day_sol;   """Gregorian month in seconds:    average calendar month length of 4800 months over 400 years."""
+month_sid  = 27.321661547  * day_sol;   """Sidereal month in seconds:     fixed star to fixed star, for J2000.0."""
+month_trop = 27.321582241  * day_sol;   """Tropical month in seconds:     equinox to equinox, influenced by precession, for J2000.0."""
+month_ano  = 27.554549878  * day_sol;   """Anomalistic month in seconds:  apside to apside, for J2000.0."""
+month_drac = 27.212220817  * day_sol;   """Draconic month in seconds:     node to node, for J2000.0."""
+month_syn  = 29.530588853  * day_sol;   """Synodic month in seconds:      phase to phase, for J2000.0."""
+month      = month_greg;                """Default month := Gregorian month in seconds."""
 
 # Length of a year:
 year_jul   = 365.25        * day_sol;   """Julian year in seconds:        assumes 100 leap years in 400 years, for J2000.0"""
@@ -120,7 +122,7 @@ year_greg  = 365.2425      * day_sol;   """Gregorian year in seconds:     assume
 year_sid   = 365.256363051 * day_sol;   """Siderial year in seconds:      fixed star to fixed star, for J2000.0"""
 year_trop  = 365.24218967  * day_sol;   """Tropical year in seconds:      equinox to equinox, influenced by precession, for J2000.0"""
 year_anom  = 365.259635864 * day_sol;   """Anomalistic year in seconds:   apside to apside, for J2000.0"""
-
+year       = year_trop;                 """Default year := tropical year (s), for J2000.0."""
 
 
 # Astronomical constants:
@@ -131,24 +133,17 @@ l_sun = 3.85e26;                        """Solar luminosity in SI (W)"""
 sol_const = 1361.5;                     """Solar constant in W/m^2 (Wikipedia)"""
 
 
-eps2000 = 0.409092804;                  """Obliquity of the ecliptic at J2000.0"""
-
-earthr = 6378136.6;                     """Equatorial radius of the Earth in SI (m), WGS84"""
+eps2000 = 0.409092804;                  """Obliquity of the ecliptic at J2000.0 (radians)"""
 
 
-"""Planet equatorial diameters (m).
-Note: Venus = 12103.6 + clouds? - e.g., Wikipedia.
-"""
-pland = __np.array([4879.4e3, 12198e3, 2*r_sun, 6792.4e3, 142984e3, 120536e3, 51118e3, 49528e3, 2390e3])  # Moon: 3476.206e3
 
-"""Planet equatorial radii (m) = pland/2."""
-planr = pland/2
+# Planet data:
+r_earth = 6378136.6;                    """Equatorial radius of the Earth in SI (m), WGS84"""
 
-"""Planet semi-major axes (m)."""
-plana = __np.array([0.3871, 0.7233, 1, 1.5237, 5.2028, 9.5388, 19.191, 30.061, 39.529])*au  # Moon: 384400/au*km
-
-"""Planet orbital periods (years - https://en.wikipedia.org/wiki/Orbital_period)."""
-planp = __np.array([0.240846, 0.615198, 1, 1.88082, 11.862, 29.4571, 84.0205, 164.8, 247.94])  # Moon: 0.0748
+pl_d = __np.array([3476.206e3, 4879.4e3, 12198e3, 2*r_earth, 6792.4e3, 142984e3, 120536e3, 51118e3, 49528e3, 2390e3]);  """Equatorial planet diameters (m); [0]=Moon; Venus = 12103.6km + clouds?"""
+pl_r = pl_d/2;  """Planet equatorial radii (m) = pland/2."""
+pl_a = __np.array([384400e3/au, 0.3871, 0.7233, 1, 1.5237, 5.2028, 9.5388, 19.191, 30.061, 39.529])*au;  """Planet semi-major axes (m); [0]=Moon"""
+pl_p = __np.array([0.0748, 0.240846, 0.615198, 1, 1.88082, 11.862, 29.4571, 84.0205, 164.8, 247.94])*year_trop;  """Planet orbital periods (s - https://en.wikipedia.org/wiki/Orbital_period); [0]=Moon."""
 
 
 # Satellites:
@@ -157,18 +152,18 @@ planp = __np.array([0.240846, 0.615198, 1, 1.88082, 11.862, 29.4571, 84.0205, 16
 
 
 # English planet names:
-plname_en     = __np.array(['Mercury','Venus','Sun','Mars','Jupiter','Saturn','Uranus','Neptune','Pluto']);   """Capitalised planet names."""          # 9x7
-plname_en_lc  = __np.array(['mercury','venus','sun','mars','jupiter','saturn','uranus','neptune','pluto']);  """Lower-case planet names."""            # 9x7
-plname_en_abr = __np.array(['Mer.','Ven.','Sun','Mars','Jup.','Sat.','Ura.','Nep.','Plu.']);                  """Capitalised planet abbreviations."""  # 9x4
+plname_en     = __np.array(['Moon','Mercury','Venus','Sun','Mars','Jupiter','Saturn','Uranus','Neptune','Pluto']);  """Capitalised planet names."""          # 10x7
+plname_en_lc  = __np.array(['moon','mercury','venus','sun','mars','jupiter','saturn','uranus','neptune','pluto']);  """Lower-case planet names."""           # 10x7
+plname_en_abr = __np.array(['Moon','Mer.','Ven.','Sun','Mars','Jup.','Sat.','Ura.','Nep.','Plu.']);                 """Capitalised planet abbreviations."""  # 10x4
 
 # Dutch planet names:
-plname_nl     = __np.array(['Mercurius','Venus','Zon','Mars','Jupiter','Saturnus','Uranus','Neptunus','Pluto']);  """Capitalised Dutch planet names."""          # 9x9
-plname_nl_lc  = __np.array(['mercurius','venus','zon','mars','jupiter','saturnus','uranus','neptunus','pluto']);  """Lower-case Dutch planet names."""           # 9x9
-plname_nl_abr = __np.array(['Mer.','Ven.','Zon','Mars','Jup.','Sat.','Ura.','Nep.','Plu.']);                      """Capitalised Dutch planet abbreviations."""  # 9x4
+plname_nl     = __np.array(['Maan','Mercurius','Venus','Zon','Mars','Jupiter','Saturnus','Uranus','Neptunus','Pluto']);  """Capitalised Dutch planet names."""          # 10x9
+plname_nl_lc  = __np.array(['maan','mercurius','venus','zon','mars','jupiter','saturnus','uranus','neptunus','pluto']);  """Lower-case Dutch planet names."""           # 10x9
+plname_nl_abr = __np.array(['Maan','Mer.','Ven.','Zon','Mars','Jup.','Sat.','Ura.','Nep.','Plu.']);                      """Capitalised Dutch planet abbreviations."""  # 10x4
 
 # Moon phases:
-moonphase_en  = __np.array(['New Moon','First Quarter','Full Moon','Last Quarter']);              """English names of Lunar phases."""  # 4x13
-moonphase_nl  = __np.array(['Nieuwe Maan','Eerste Kwartier','Volle Maan','Laatste Kwartier']);  """Dutch names of Lunar phases."""      # 4x16
+moonphase_en  = __np.array(['New Moon','First Quarter','Full Moon','Last Quarter']);            """English names of Lunar phases."""  # 4x13
+moonphase_nl  = __np.array(['Nieuwe Maan','Eerste Kwartier','Volle Maan','Laatste Kwartier']);  """Dutch names of Lunar phases."""    # 4x16
 
 
 
@@ -181,6 +176,7 @@ m_h     =  1.007825*amu;                       """Mass of a hydrogen atom"""
 k_b     =  1.38064852e-23;                     """Boltzmann constant, 1.380658e-23 J/K"""
 h_p     =  6.626070040e-34;                    """Planck's constant, 6.6260755e-34 J s"""
 h_bar   =  h_p/pi2;                            """Reduced Planck constant, J s"""
+
 a_rad   =  k_b**4/((c*h_p)**3) * 8*pi**5/15;   """Radiation (density) constant, 7.56591e-16 J m^-3 K^-4"""
 sigma   =  a_rad*c*0.25;                       """Stefan-Boltzmann constant, 5.67051e-8 J m^-2 K^-4 s^-1"""
 
