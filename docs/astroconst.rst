@@ -7,7 +7,6 @@ Submodules
 .. toctree::
    :maxdepth: 4
 
-   astroconst.__astro
    astroconst.aa
 
 Module contents
