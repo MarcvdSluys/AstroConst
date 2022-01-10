@@ -13,19 +13,11 @@
 #  Union Public License along with this code.  If not, see <https://www.eupl.eu/1.2/en/>.
 
 
-"""AstroConst package
+"""__astro.py: main astronomy constants.
 
-A Python package that provides astronomical constants.
-The code is being developed by `Marc van der Sluys <http://marc.vandersluys.nl>`_ of the department of
-Astrophysics at the Radboud University Nijmegen, the Institute of Nuclear and High-Energy Physics (Nikhef),
-and the Institute for Gravitational and Subatomic Physics (GRASP) at Utrecht University, all in The Netherlands.
-The AstroConst package can be used under the conditions of the EUPL 1.2 licence.  These pages contain the API
-documentation.  For more information on the Python package, licence and source code, see the
-`AstroConst GitHub page <https://github.com/MarcvdSluys/AstroConst>`_.
+These constants are available through `astroconst.<constname>` or `ac.<constname>`.
 """
 
-
-name = 'astroconst'
 
 import numpy as __np
 from . import aa  # Constants from the Astronomical Almanac
@@ -105,7 +97,7 @@ mlen = __np.array([31,28,31,30,31,30,31,31,30,31,30,31]);  """Length of the mont
 # Length of a day:
 day_sid = 0.997269663;                  """Siderial day in days"""
 day_sol = 8.64e4;                       """Solar day = 86400 s"""
-day     = day_sol;                      """Default day := solar day = 86400 s"""
+day     = day_sol;                      """Default day == solar day = 86400 s"""
 
 # Length of a month:
 month_greg = 30.4369       * day_sol;   """Gregorian month in seconds:    average calendar month length of 4800 months over 400 years."""
@@ -114,7 +106,7 @@ month_trop = 27.321582241  * day_sol;   """Tropical month in seconds:     equino
 month_ano  = 27.554549878  * day_sol;   """Anomalistic month in seconds:  apside to apside, for J2000.0."""
 month_drac = 27.212220817  * day_sol;   """Draconic month in seconds:     node to node, for J2000.0."""
 month_syn  = 29.530588853  * day_sol;   """Synodic month in seconds:      phase to phase, for J2000.0."""
-month      = month_greg;                """Default month := Gregorian month in seconds."""
+month      = month_greg;                """Default month == Gregorian month in seconds."""
 
 # Length of a year:
 year_jul   = 365.25        * day_sol;   """Julian year in seconds:        assumes 100 leap years in 400 years, for J2000.0"""
@@ -122,7 +114,7 @@ year_greg  = 365.2425      * day_sol;   """Gregorian year in seconds:     assume
 year_sid   = 365.256363051 * day_sol;   """Siderial year in seconds:      fixed star to fixed star, for J2000.0"""
 year_trop  = 365.24218967  * day_sol;   """Tropical year in seconds:      equinox to equinox, influenced by precession, for J2000.0"""
 year_anom  = 365.259635864 * day_sol;   """Anomalistic year in seconds:   apside to apside, for J2000.0"""
-year       = year_trop;                 """Default year := tropical year (s), for J2000.0."""
+year       = year_trop;                 """Default year == tropical year (s), for J2000.0."""
 
 
 # Astronomical constants:
@@ -180,8 +172,8 @@ h_bar   =  h_p/pi2;                            """Reduced Planck constant, J s""
 a_rad   =  k_b**4/((c*h_p)**3) * 8*pi**5/15;   """Radiation (density) constant, 7.56591e-16 J m^-3 K^-4"""
 sigma   =  a_rad*c*0.25;                       """Stefan-Boltzmann constant, 5.67051e-8 J m^-2 K^-4 s^-1"""
 
-eV      = 1.6021766208e-19;                    """Elementary (|electron|) charge in Coulomb;  ElectronVolt: 1.6021766e-19 J"""
-ec      = eV;                                  """Elementary (|electron|) charge in Coulomb;  ElectronVolt: 1.6021766e-19 J"""
+eV      = 1.6021766208e-19;                    """Elementary (electron) charge in Coulomb;  ElectronVolt: 1.6021766e-19 J"""
+ec      = eV;                                  """Elementary (electron) charge in Coulomb;  ElectronVolt: 1.6021766e-19 J"""
 
 nm      = 1e-9;                                """Nanometer in SI (m)"""
 mum     = 1e-6;                                """Micrometer in SI (m)"""
