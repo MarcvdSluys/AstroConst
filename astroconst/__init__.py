@@ -30,14 +30,6 @@ name = 'astroconst'
 import numpy as __np
 from . import aa  # Submodule with constants from the Astronomical Almanac
 
-# Make some often-used AA constants more readily available:
-au   = aa.au;             """Astronomical unit"""
-c    = aa.c;              """Speed of light in vacuo"""
-eps0 = aa.epsilon_j2000;  """Obliquity of the ecliptic in J2000.0"""
-g    = aa.g;              """Newton's gravitational constant"""
-
-
-
 # Angles:
 # Mathematical constans:
 pi    = __np.pi;          """π"""
@@ -59,6 +51,14 @@ as2r  = d2r/3600;         """Factor to convert arcseconds to radians."""  # (Rad
 r2as  = r2d*3600;         """Factor to convert radians to arcseconds."""  # (Rad -> deg) -> as
 mas2r = as2r/1000;        """Factor to convert milliarcseconds to radians."""  # (Rad <- as) <- mas
 r2mas = r2as*1000;        """Factor to convert radians to milliarcseconds."""  # (Rad -> as) -> mas
+
+
+
+# Make some often-used AA constants more readily available:
+au   = aa.au;                 """Astronomical unit"""
+c    = aa.c;                  """Speed of light in vacuo"""
+eps0 = aa.epsilon_j2000*d2r;  """Obliquity of the ecliptic in J2000.0, degrees -> radians"""
+g    = aa.g;                  """Newton's gravitational constant"""
 
 
 
