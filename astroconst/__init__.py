@@ -61,6 +61,11 @@ eps0 = aa.epsilon_j2000*d2r;  """Obliquity of the ecliptic in J2000.0, degrees -
 g    = aa.g;                  """Newton's gravitational constant"""
 
 
+# Definition of Galactic coordinates:
+ra_gp2000   = 3.3660329;      """RA of the Galactic pole for J2000: 192.85948° in rad"""
+dec_gp2000  = 0.4734773;      """Dec of the Galactic pole for J2000: 27.12825° in rad"""
+glon_se2000 = 0.5747704;      """Galactic longitude of the Spring equinox for J2000: 32.93192° in rad"""
+
 
 # Calendar/time:
 jd1820 = 2385801;        """JD in 1820 (when ΔT=0)"""
