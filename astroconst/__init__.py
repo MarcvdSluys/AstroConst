@@ -62,9 +62,12 @@ g    = aa.g;                  """Newton's gravitational constant"""
 
 
 # Definition of Galactic coordinates:
-ra_gp_2000   = 3.3660329;     """RA of the Galactic pole for J2000: 192.85948° in rad"""
-dec_gp_2000  = 0.4734773;     """Dec of the Galactic pole for J2000: 27.12825° in rad"""
-glon_se_2000 = 0.5747704;     """Galactic longitude of the Spring equinox for J2000: 32.93192° in rad"""
+glon_se_2000    = 0.5747704;     """Galactic longitude of the Spring equinox for J2000: 32.93192° in rad"""
+ra_gp_2000      = 3.3660329;     """RA of the Galactic pole for J2000: 192.85948° in rad"""
+dec_gp_2000     = 0.4734773;     """Dec of the Galactic pole for J2000: 27.12825° in rad"""
+
+cos_dec_gp_2000 = __np.cos(dec_gp_2000);  """Cosine of dec_gp_2000, needed for coordinate transformations"""
+sin_dec_gp_2000 = __np.sin(dec_gp_2000);  """Sine of dec_gp_2000, needed for coordinate transformations"""
 
 
 # Calendar/time:
