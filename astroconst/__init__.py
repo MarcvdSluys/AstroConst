@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-#  Copyright (c) 2022  Marc van der Sluys - marc.vandersluys.nl
+#  Copyright (c) 2022-2023  Marc van der Sluys - marc.vandersluys.nl
 #   
 #  This file is part of the AstroConst Python package:
 #  A Python package that provides astronomical constants.
@@ -76,6 +76,7 @@ jd1875 = 2405890;        """JD at J1875.0 (when constellation boundaries were de
 jd1900 = 2415021;        """JD at J1900.0"""
 jd1950 = 2433283;        """JD at J1950.0"""
 jd2000 = 2451545;        """JD at J2000.0 (2000-01-01 12:00 UT)"""
+jd_hip = 2448349.0625;   """JD of the Hipparcos catalogue (1991-04-02 ~13:29 UT) - https://heasarc.gsfc.nasa.gov/W3Browse/all/hipparcos.html"""
 
 # Month names: 1-12 = Jan-Dec
 # en:
