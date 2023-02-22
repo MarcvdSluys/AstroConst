@@ -138,6 +138,10 @@ r_sun = 6.9599e8;                       """Solar radius in SI (m)"""
 m_sun = 1.9891e30;                      """Solar mass in SI (kg)"""
 l_sun = 3.85e26;                        """Solar luminosity in SI (W)"""
 
+sun_r = 6.9599e8;                       """Solar radius in SI (m)"""
+sun_m = 1.9891e30;                      """Solar mass in SI (kg)"""
+sun_l = 3.85e26;                        """Solar luminosity in SI (W)"""
+
 sol_const = 1361.5;                     """Solar constant in W/m^2 (Wikipedia)"""
 
 
@@ -147,12 +151,17 @@ eps2000 = 0.409092804;                  """Obliquity of the ecliptic at J2000.0 
 
 # Planet data:
 r_earth = 6378136.6;                    """Equatorial radius of the Earth in SI (m), WGS84"""
+e_earth = 0.01671;                      """Orbital eccentricity of the Earth - https://en.wikipedia.org/wiki/Orbital_eccentricity"""
+
+earth_r = 6378136.6;                    """Equatorial radius of the Earth in SI (m), WGS84"""
+earth_e = 0.01671;                      """Orbital eccentricity of the Earth - https://en.wikipedia.org/wiki/Orbital_eccentricity"""
+
 
 pl_d = __np.array([3476.206e3, 4879.4e3, 12198e3, 2*r_earth, 6792.4e3, 142984e3, 120536e3, 51118e3, 49528e3, 2390e3]);  """Equatorial planet diameters (m); [0]=Moon; Venus = 12103.6km + clouds?"""
 pl_r = pl_d/2;  """Planet equatorial radii (m) = pland/2."""
-pl_a = __np.array([384400e3/au, 0.3871, 0.7233, 1, 1.5237, 5.2028, 9.5388, 19.191, 30.061, 39.529])*au;  """Planet semi-major axes (m); [0]=Moon"""
-pl_p = __np.array([0.0748, 0.240846, 0.615198, 1, 1.88082, 11.862, 29.4571, 84.0205, 164.8, 247.94])*year_trop;  """Planet orbital periods (s - https://en.wikipedia.org/wiki/Orbital_period); [0]=Moon."""
-
+pl_a = __np.array([384400e3/au, 0.3871,   0.7233,       1,  1.5237, 5.2028,  9.5388, 19.191,  30.061, 39.529])*au;         """Planet semi-major axes (m); [0]=Moon"""
+pl_p = __np.array([0.0748,    0.240846, 0.615198,       1, 1.88082, 11.862, 29.4571, 84.0205,  164.8, 247.94])*year_trop;  """Planet orbital periods (s - https://en.wikipedia.org/wiki/Orbital_period); [0]=Moon."""
+pl_e = __np.array([0.0549,      0.2056,   0.0068, 0.01671,  0.0934, 0.0484,  0.0541,  0.0472, 0.0086, 0.2488]);            """Planet orbital eccentricities (s - https://en.wikipedia.org/wiki/Orbital_eccentricity); [0]=Moon."""
 
 # Satellites:
 # satrad(4:8,30);   """Radii Galilean moons (m)"""
