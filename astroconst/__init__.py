@@ -24,7 +24,6 @@ documentation.  For more information on the Python package, licence and source c
 `AstroConst GitHub page <https://github.com/MarcvdSluys/AstroConst>`_.
 """
 
-
 name = 'astroconst'
 
 import numpy as __np
@@ -58,6 +57,8 @@ r2mas = r2as*1000;        """Factor to convert radians to milliarcseconds."""  #
 au   = aa.au;                 """Astronomical unit"""
 c    = aa.c;                  """Speed of light in vacuo"""
 eps0 = aa.epsilon_j2000*d2r;  """Obliquity of the ecliptic in J2000.0, degrees -> radians"""
+# eps2000 = 0.409092804;                  """Obliquity of the ecliptic at J2000.0 (radians)"""
+eps2000 = eps0;               """Obliquity of the ecliptic at J2000.0 (radians)"""
 g    = aa.g;                  """Newton's gravitational constant"""
 
 
@@ -132,8 +133,7 @@ year_trop  = 365.24218967  * day_sol;   """Tropical year in seconds:      equino
 year_anom  = 365.259635864 * day_sol;   """Anomalistic year in seconds:   apside to apside, for J2000.0"""
 year       = year_trop;                 """Default year == tropical year (s), for J2000.0."""
 
-
-# Astronomical constants:
+# Astrophysical constants:
 r_sun = 6.9599e8;                       """Solar radius in SI (m)"""
 m_sun = 1.9891e30;                      """Solar mass in SI (kg)"""
 l_sun = 3.85e26;                        """Solar luminosity in SI (W)"""
@@ -145,11 +145,12 @@ sun_l = 3.85e26;                        """Solar luminosity in SI (W)"""
 sol_const = 1361.5;                     """Solar constant in W/m^2 (Wikipedia)"""
 
 
-eps2000 = 0.409092804;                  """Obliquity of the ecliptic at J2000.0 (radians)"""
 
 
 
 # Planet data:
+au_lighttime_days = au/c/day;           """The light time for 1 AU in days (for apparent planet positions)"""
+
 r_earth = 6378136.6;                    """Equatorial radius of the Earth in SI (m), WGS84"""
 e_earth = 0.01671;                      """Orbital eccentricity of the Earth - https://en.wikipedia.org/wiki/Orbital_eccentricity"""
 
