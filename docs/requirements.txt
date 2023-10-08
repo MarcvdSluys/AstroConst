@@ -1,0 +1,3 @@
+astroconst
+numpy
+sphinx-rtd-theme
