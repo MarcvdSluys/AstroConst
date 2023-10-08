@@ -1,3 +1,35 @@
 [build-system]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = []
+
+[project]
+name = "astroconst"
+version = "0.0.8"
+authors = [ { name="Marc van der Sluys", email="git@vandersluys.nl" } ]
+description = "A Python package that provides astronomical constants."
+readme   = "README.md"
+license  = {text = "EUPL 1.2"}
+keywords = ["constants", "astronomy", "physics", "mathematics"]
+dependencies = ["numpy"]
+
+# See: https://pypi.org/pypi?:action=list_classifiers
+classifiers = [
+        "Development Status :: 3 - Alpha",
+        "Intended Audience :: Developers",
+        "Intended Audience :: Education",
+        "Intended Audience :: Science/Research",
+        "License :: OSI Approved :: European Union Public Licence 1.2 (EUPL 1.2)",
+        "Natural Language :: English",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python :: 3",
+        "Topic :: Scientific/Engineering",
+        "Topic :: Scientific/Engineering :: Astronomy",
+        "Topic :: Scientific/Engineering :: Physics",
+    ]
+
+[project.urls]
+GitHub = "https://github.com/MarcvdSluys/AstroConst"
+ReadTheDocs = "https://astroconst.readthedocs.io"
