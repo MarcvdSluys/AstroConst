@@ -7,7 +7,7 @@ py-modules = []
 
 [project]
 name = "astroconst"
-version = "0.0.8"
+version = "0.0.9"
 authors = [ { name="Marc van der Sluys", email="git@vandersluys.nl" } ]
 description = "A Python package that provides astronomical constants."
 readme   = "README.md"
