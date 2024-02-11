@@ -1,7 +1,7 @@
 #!/bin/env python
 # -*- coding: utf-8 -*-
 #
-#  Copyright (c) 2022-2023  Marc van der Sluys - marc.vandersluys.nl
+#  Copyright (c) 2022-2024  Marc van der Sluys - marc.vandersluys.nl
 #  
 #  This file is part of the AstroConst Python package:
 #  A Python package that provides astronomical constants.

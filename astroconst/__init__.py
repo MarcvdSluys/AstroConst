@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-#  Copyright (c) 2022-2023  Marc van der Sluys - marc.vandersluys.nl
+#  Copyright (c) 2022-2024  Marc van der Sluys - marc.vandersluys.nl
 #   
 #  This file is part of the AstroConst Python package:
 #  A Python package that provides astronomical constants.
@@ -153,9 +153,11 @@ au_lighttime_days = au/c/day;           """The light time for 1 AU in days (for 
 
 r_earth = 6378136.6;                    """Equatorial radius of the Earth in SI (m), WGS84"""
 e_earth = 0.01671;                      """Orbital eccentricity of the Earth - https://en.wikipedia.org/wiki/Orbital_eccentricity"""
+m_earth = 5.972168e24;                  """Mass of the Earth in SI (kg) - https://en.wikipedia.org/wiki/Earth"""
 
 earth_r = 6378136.6;                    """Equatorial radius of the Earth in SI (m), WGS84"""
 earth_e = 0.01671;                      """Orbital eccentricity of the Earth - https://en.wikipedia.org/wiki/Orbital_eccentricity"""
+earth_m = 5.972168e24;                  """Mass of the Earth in SI (kg) - https://en.wikipedia.org/wiki/Earth"""
 
 
 pl_d = __np.array([3476.206e3, 4879.4e3, 12198e3, 2*r_earth, 6792.4e3, 142984e3, 120536e3, 51118e3, 49528e3, 2390e3]);  """Equatorial planet diameters (m); [0]=Moon; Venus = 12103.6km + clouds?"""
@@ -178,6 +180,13 @@ plname_en_abr = __np.array(['Moon','Mer.','Ven.','Sun','Mars','Jup.','Sat.','Ura
 plname_nl     = __np.array(['Maan','Mercurius','Venus','Zon','Mars','Jupiter','Saturnus','Uranus','Neptunus','Pluto']);  """Capitalised Dutch planet names."""          # 10x9
 plname_nl_lc  = __np.array(['maan','mercurius','venus','zon','mars','jupiter','saturnus','uranus','neptunus','pluto']);  """Lower-case Dutch planet names."""           # 10x9
 plname_nl_abr = __np.array(['Maan','Mer.','Ven.','Zon','Mars','Jup.','Sat.','Ura.','Nep.','Plu.']);                      """Capitalised Dutch planet abbreviations."""  # 10x4
+
+
+
+# Moon data:
+moon_r = 17381e2;                       """Equatorial radius of the Moon in SI (m) - https://en.wikipedia.org/wiki/Moon"""
+moon_e = 0.0549;                        """Orbital eccentricity of the Moon - https://en.wikipedia.org/wiki/Moon"""
+moon_m = 7.342e22;                      """Mass of the Moon in SI (kg) - https://en.wikipedia.org/wiki/Moon"""
 
 # Moon phases:
 moonphase_en  = __np.array(['New Moon','First Quarter','Full Moon','Last Quarter']);            """English names of Lunar phases."""  # 4x13
