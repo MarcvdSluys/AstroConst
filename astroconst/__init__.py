@@ -31,6 +31,8 @@ from . import aa  # Submodule with constants from the Astronomical Almanac
 
 # Angles:
 # Mathematical constans:
+c3rd  = 1/3;              """One third"""
+
 pi    = __np.pi;          """π"""
 pi2   = 2*pi;             """2π"""
 pio2  = pi/2;             """π/2"""
@@ -60,6 +62,7 @@ eps0 = aa.epsilon_j2000*d2r;  """Obliquity of the ecliptic in J2000.0, degrees -
 # eps2000 = 0.409092804;                  """Obliquity of the ecliptic at J2000.0 (radians)"""
 eps2000 = eps0;               """Obliquity of the ecliptic at J2000.0 (radians)"""
 g    = aa.g;                  """Newton's gravitational constant"""
+G    = aa.g;                  """Newton's gravitational constant"""
 
 
 # Definition of Galactic coordinates:
@@ -144,6 +147,11 @@ sun_l = 3.85e26;                        """Solar luminosity in SI (W)"""
 
 sol_const = 1361.5;                     """Solar constant in W/m^2 (Wikipedia)"""
 
+# Astrophysical distances:
+pc = 3.0856776e16;                      """Parsec (3.26 lightyear) in metres"""
+kpc = 1000*pc;                          """Kiloparsec in metres"""
+Mpc = 1000*kpc;                         """Megaparsec in metres"""
+Gpc = 1000*Mpc;                         """Gigaparsec in metres"""
 
 
 
