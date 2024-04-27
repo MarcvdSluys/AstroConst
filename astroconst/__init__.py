@@ -153,6 +153,7 @@ kpc = 1000*pc;                          """Kiloparsec in metres"""
 Mpc = 1000*kpc;                         """Megaparsec in metres"""
 Gpc = 1000*Mpc;                         """Gigaparsec in metres"""
 
+ly = 9.4607305e15;                      """Light year (c * julian year) in metres"""
 
 
 
