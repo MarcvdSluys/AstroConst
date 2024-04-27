@@ -141,11 +141,25 @@ r_sun = 6.9599e8;                       """Solar radius in SI (m)"""
 m_sun = 1.9891e30;                      """Solar mass in SI (kg)"""
 l_sun = 3.85e26;                        """Solar luminosity in SI (W)"""
 
-sun_r = 6.9599e8;                       """Solar radius in SI (m)"""
-sun_m = 1.9891e30;                      """Solar mass in SI (kg)"""
-sun_l = 3.85e26;                        """Solar luminosity in SI (W)"""
+# Aliases:
+sun_r = r_sun;                          """Solar radius in SI (m)"""
+sol_r = r_sun;                          """Solar radius in SI (m)"""
+Rsun  = r_sun;                          """Solar radius in SI (m)"""
+Ro    = r_sun;                          """Solar radius in SI (m)"""
+
+sun_m = m_sun;                          """Solar mass in SI (kg)"""
+sol_m = m_sun;                          """Solar mass in SI (kg)"""
+Msun  = m_sun;                          """Solar mass in SI (kg)"""
+Mo    = m_sun;                          """Solar mass in SI (kg)"""
+
+sun_l = l_sun;                          """Solar luminosity in SI (W)"""
+sol_l = l_sun;                          """Solar luminosity in SI (W)"""
+Lsun  = l_sun;                          """Solar luminosity in SI (W)"""
+Lo    = l_sun;                          """Solar luminosity in SI (W)"""
+
 
 sol_const = 1361.5;                     """Solar constant in W/m^2 (Wikipedia)"""
+
 
 # Astrophysical distances:
 pc = 3.0856776e16;                      """Parsec (3.26 lightyear) in metres"""
