@@ -136,6 +136,10 @@ year_trop  = 365.24218967  * day_sol;   """Tropical year in seconds:      equino
 year_anom  = 365.259635864 * day_sol;   """Anomalistic year in seconds:   apside to apside, for J2000.0"""
 year       = year_trop;                 """Default year == tropical year (s), for J2000.0."""
 
+kyr = 1000 * year;                      """Kiloyear = 1e3 tropical years"""
+Myr = 1000 * kyr;                       """Megayear = 1e6 tropical years"""
+Gyr = 1000 * Myr;                       """Gigayear = 1e9 tropical years"""
+
 # Astrophysical constants:
 r_sun = 6.9599e8;                       """Solar radius in SI (m)"""
 m_sun = 1.9891e30;                      """Solar mass in SI (kg)"""
@@ -241,6 +245,9 @@ km      = 1e3;                                 """Kilometer in SI (m)"""
 
 c2k     = 273.15;                              """Degrees Celcius to Kelvin (shift)"""
 
+
+# Non-SI units
+erg     = 1e-7;                                """1 erg in Joule"""
 
 
 # Character constants:
