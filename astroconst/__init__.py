@@ -54,7 +54,6 @@ mas2r = as2r/1000;        """Factor to convert milliarcseconds to radians."""  #
 r2mas = r2as*1000;        """Factor to convert radians to milliarcseconds."""  # (Rad -> as) -> mas
 
 
-
 # Make some often-used AA constants more readily available:
 au   = aa.au;                 """Astronomical unit"""
 c    = aa.c;                  """Speed of light in vacuo"""
@@ -63,6 +62,43 @@ eps0 = aa.epsilon_j2000*d2r;  """Obliquity of the ecliptic in J2000.0, degrees -
 eps2000 = eps0;               """Obliquity of the ecliptic at J2000.0 (radians)"""
 g    = aa.g;                  """Newton's gravitational constant"""
 G    = aa.g;                  """Newton's gravitational constant"""
+
+
+# Physical constants - SI:
+gr      =  9.80665;                            """Mean gravitational acceleration at the Earth's surface, m s^-2"""
+
+amu     =  1.660539040e-27;                    """Atomic mass unit; (mass of C12 atom)/12, 1.6605402e-27 kg"""
+m_h     =  1.007825*amu;                       """Mass of a hydrogen atom"""
+m_e     =  9.1093837e-31;                      """Mass of an electron"""
+
+k_b     =  1.38064852e-23;                     """Boltzmann constant, 1.380658e-23 J/K"""
+h_p     =  6.626070040e-34;                    """Planck's constant, 6.6260755e-34 J s"""
+h_bar   =  h_p/pi2;                            """Reduced Planck constant, J s"""
+
+a_rad   =  k_b**4/((c*h_p)**3) * 8*pi**5/15;   """Radiation (density) constant, 7.56591e-16 J m^-3 K^-4"""
+sigma   =  a_rad*c*0.25;                       """Stefan-Boltzmann constant, 5.67051e-8 J m^-2 K^-4 s^-1"""
+
+eV      = 1.6021766208e-19;                    """Elementary (electron) charge in Coulomb;  ElectronVolt: 1.6021766e-19 J"""
+ec      = eV;                                  """Elementary (electron) charge in Coulomb;  ElectronVolt: 1.6021766e-19 J"""
+
+nm      = 1e-9;                                """Nanometer in SI (m)"""
+mum     = 1e-6;                                """Micrometer in SI (m)"""
+mm      = 1e-3;                                """Millimeter in SI (m)"""
+cm      = 1e-2;                                """Centimeter in SI (m)"""
+km      = 1e3;                                 """Kilometer in SI (m)"""
+
+c2k     = 273.15;                              """Degrees Celcius to Kelvin (shift)"""
+
+
+# Non-SI units
+erg     = 1e-7;                                """1 erg in Joule"""
+eV      = 1.6021766e-19;                       """1 eV in Joule"""
+keV     = 1000*eV;                             """1 keV in Joule"""
+MeV     = 1000*keV;                            """1 MeV in Joule"""
+GeV     = 1000*MeV;                            """1 GeV in Joule"""
+
+
+
 
 
 # Definition of Galactic coordinates:
@@ -219,35 +255,6 @@ moon_m = 7.342e22;                      """Mass of the Moon in SI (kg) - https:/
 moonphase_en  = __np.array(['New Moon','First Quarter','Full Moon','Last Quarter']);            """English names of Lunar phases."""  # 4x13
 moonphase_nl  = __np.array(['Nieuwe Maan','Eerste Kwartier','Volle Maan','Laatste Kwartier']);  """Dutch names of Lunar phases."""    # 4x16
 
-
-
-# Physical constants - SI:
-gr      =  9.80665;                            """Mean gravitational acceleration at the Earth's surface, m s^-2"""
-
-amu     =  1.660539040e-27;                    """Atomic mass unit; (mass of C12 atom)/12, 1.6605402e-27 kg"""
-m_h     =  1.007825*amu;                       """Mass of a hydrogen atom"""
-
-k_b     =  1.38064852e-23;                     """Boltzmann constant, 1.380658e-23 J/K"""
-h_p     =  6.626070040e-34;                    """Planck's constant, 6.6260755e-34 J s"""
-h_bar   =  h_p/pi2;                            """Reduced Planck constant, J s"""
-
-a_rad   =  k_b**4/((c*h_p)**3) * 8*pi**5/15;   """Radiation (density) constant, 7.56591e-16 J m^-3 K^-4"""
-sigma   =  a_rad*c*0.25;                       """Stefan-Boltzmann constant, 5.67051e-8 J m^-2 K^-4 s^-1"""
-
-eV      = 1.6021766208e-19;                    """Elementary (electron) charge in Coulomb;  ElectronVolt: 1.6021766e-19 J"""
-ec      = eV;                                  """Elementary (electron) charge in Coulomb;  ElectronVolt: 1.6021766e-19 J"""
-
-nm      = 1e-9;                                """Nanometer in SI (m)"""
-mum     = 1e-6;                                """Micrometer in SI (m)"""
-mm      = 1e-3;                                """Millimeter in SI (m)"""
-cm      = 1e-2;                                """Centimeter in SI (m)"""
-km      = 1e3;                                 """Kilometer in SI (m)"""
-
-c2k     = 273.15;                              """Degrees Celcius to Kelvin (shift)"""
-
-
-# Non-SI units
-erg     = 1e-7;                                """1 erg in Joule"""
 
 
 # Character constants:
