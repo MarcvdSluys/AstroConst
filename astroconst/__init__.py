@@ -210,6 +210,12 @@ Gpc = 1000*Mpc;                         """Gigaparsec in metres"""
 ly = 9.4607305e15;                      """Light year (c * julian year) in metres"""
 
 
+# Cosmological:
+age_of_universe = 13.787*Gyr;           """Age of the universe in seconds"""  # ± 0.020 Gyr (2018 Planck results) - https://en.wikipedia.org/wiki/Lambda-CDM_model#Parameters
+H0 = 67.4*km/Mpc;                       """Hubble constant in Hertz"""        # ± 0.5 km/s/Mpc (2018 Planck results) - https://en.wikipedia.org/wiki/Lambda-CDM_model#Parameters
+tH = 1/H0;                              """Hubble time in seconds"""
+cmb_temp = 2.72548;                     """Temperature of cosmic microwave background in Kelvin"""   # ± 0.00057 K - https://arxiv.org/abs/0911.1955
+
 
 # Planet data:
 au_lighttime_days = au/c/day;           """The light time for 1 AU in days (for apparent planet positions)"""
