@@ -176,6 +176,8 @@ kyr = 1000 * year;                      """Kiloyear = 1e3 tropical years"""
 Myr = 1000 * kyr;                       """Megayear = 1e6 tropical years"""
 Gyr = 1000 * Myr;                       """Gigayear = 1e9 tropical years"""
 
+weeks_per_year = 365.2425/7;            """Number of weeks in a Gregorian year"""
+
 # Astrophysical constants:
 r_sun = 6.9599e8;                       """Solar radius in SI (m)"""
 m_sun = 1.9891e30;                      """Solar mass in SI (kg)"""
@@ -220,16 +222,19 @@ cmb_temp = 2.72548;                     """Temperature of cosmic microwave backg
 # Planet data:
 au_lighttime_days = au/c/day;           """The light time for 1 AU in days (for apparent planet positions)"""
 
-r_earth = 6378136.6;                    """Equatorial radius of the Earth in SI (m), WGS84"""
-e_earth = 0.01671;                      """Orbital eccentricity of the Earth - https://en.wikipedia.org/wiki/Orbital_eccentricity"""
-m_earth = 5.972168e24;                  """Mass of the Earth in SI (kg) - https://en.wikipedia.org/wiki/Earth"""
-
-earth_r = 6378136.6;                    """Equatorial radius of the Earth in SI (m), WGS84"""
-earth_e = 0.01671;                      """Orbital eccentricity of the Earth - https://en.wikipedia.org/wiki/Orbital_eccentricity"""
 earth_m = 5.972168e24;                  """Mass of the Earth in SI (kg) - https://en.wikipedia.org/wiki/Earth"""
+earth_r = 6378136.6;                    """Equatorial radius of the Earth in SI (m), WGS84"""
+earth_g = G*earth_m/earth_r**2;         """Gravitational acceleration at the Earth's surface in SI (m/s^2)"""
+earth_e = 0.01671;                      """Orbital eccentricity of the Earth - https://en.wikipedia.org/wiki/Orbital_eccentricity"""
+
+m_earth = earth_m;                      """Mass of the Earth in SI (kg) - https://en.wikipedia.org/wiki/Earth"""
+r_earth = earth_r;                      """Equatorial radius of the Earth in SI (m), WGS84"""
+g_earth = earth_g;                      """Gravitational acceleration at the Earth's surface in SI (m/s^2)"""
+e_earth = earth_e;                      """Orbital eccentricity of the Earth - https://en.wikipedia.org/wiki/Orbital_eccentricity"""
 
 
-pl_d = __np.array([3476.206e3, 4879.4e3, 12198e3, 2*r_earth, 6792.4e3, 142984e3, 120536e3, 51118e3, 49528e3, 2390e3]);  """Equatorial planet diameters (m); [0]=Moon; Venus = 12103.6km + clouds?"""
+
+pl_d = __np.array([3476.206e3, 4879.4e3, 12198e3, 2*earth_r, 6792.4e3, 142984e3, 120536e3, 51118e3, 49528e3, 2390e3]);     """Equatorial planet diameters (m); [0]=Moon; Venus = 12103.6km + clouds?"""
 pl_r = pl_d/2;  """Planet equatorial radii (m) = pland/2."""
 pl_a = __np.array([384400e3/au, 0.3871,   0.7233,       1,  1.5237, 5.2028,  9.5388, 19.191,  30.061, 39.529])*au;         """Planet semi-major axes (m); [0]=Moon"""
 pl_p = __np.array([0.0748,    0.240846, 0.615198,       1, 1.88082, 11.862, 29.4571, 84.0205,  164.8, 247.94])*year_trop;  """Planet orbital periods (s - https://en.wikipedia.org/wiki/Orbital_period); [0]=Moon."""
@@ -253,9 +258,11 @@ plname_nl_abr = __np.array(['Maan','Mer.','Ven.','Zon','Mars','Jup.','Sat.','Ura
 
 
 # Moon data:
-moon_r = 17381e2;                       """Equatorial radius of the Moon in SI (m) - https://en.wikipedia.org/wiki/Moon"""
+moon_r = 1738.1e3;                      """Equatorial radius of the Moon in SI (m) - https://en.wikipedia.org/wiki/Moon"""
 moon_e = 0.0549;                        """Orbital eccentricity of the Moon - https://en.wikipedia.org/wiki/Moon"""
 moon_m = 7.342e22;                      """Mass of the Moon in SI (kg) - https://en.wikipedia.org/wiki/Moon"""
+moon_a = 384399e3;                      """Semimajor axis of the Moon's orbit in SI (m)  - https://en.wikipedia.org/wiki/Moon"""
+moon_i = 5.145*d2r;                     """Inclination angle of the Moon's orbit in SI (rad)  - https://en.wikipedia.org/wiki/Moon"""
 
 # Moon phases:
 moonphase_en  = __np.array(['New Moon','First Quarter','Full Moon','Last Quarter']);            """English names of Lunar phases."""  # 4x13
