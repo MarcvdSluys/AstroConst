@@ -219,6 +219,12 @@ tH = 1/H0;                              """Hubble time in seconds"""
 cmb_temp = 2.72548;                     """Temperature of cosmic microwave background in Kelvin"""   # ± 0.00057 K - https://arxiv.org/abs/0911.1955
 
 
+# Radiation:
+Jy  = 1e-26;                            """Jansky in W/m^2 Hz"""
+kJy = 1000*Jy;                          """kiloJansky in W/m^2 Hz"""
+MJy = 1000*kJy;                         """MegaJansky in W/m^2 Hz"""
+
+
 # Planet data:
 au_lighttime_days = au/c/day;           """The light time for 1 AU in days (for apparent planet positions)"""
 
