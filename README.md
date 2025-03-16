@@ -79,4 +79,4 @@ print(ac.months_en[3])  # March
 * [The Astronomical Almanac Online!](http://asa.hmnao.com/SecK/Constants.html)
 
 
-<sub>Copyright (c) 2022 Marc van der Sluys</sub>
+<sub>Copyright (c) 2022-2025 Marc van der Sluys</sub>

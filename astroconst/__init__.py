@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-#  Copyright (c) 2022-2024  Marc van der Sluys - marc.vandersluys.nl
+#  Copyright (c) 2022-2025  Marc van der Sluys - marc.vandersluys.nl
 #   
 #  This file is part of the AstroConst Python package:
 #  A Python package that provides astronomical constants.
@@ -35,6 +35,7 @@ c3rd  = 1/3;              """One third"""
 
 pi    = __np.pi;          """π"""
 pi2   = 2*pi;             """2π"""
+pi4   = 4*pi;             """4π"""
 pio2  = pi/2;             """π/2"""
 pio4  = pi/4;             """π/4"""
 
