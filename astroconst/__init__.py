@@ -150,10 +150,16 @@ dst_nl = __np.array(['wintertijd','zomertijd']);                 """Dutch DST ti
 
 mlen = __np.array([31,28,31,30,31,30,31,31,30,31,30,31]);  """Length of the months (for non-leap year)."""  # Len=12
 
+# Length of a second, minute, hour:
+second =  1;                            """Second in SI"""
+s      = second;                        """Second in SI"""
+minute = 60*second;                     """Minute in SI"""
+hour   = 60*minute;                     """Hour in SI"""
+hr     = hour;                          """Hour in SI"""
 
 # Length of a day:
 day_sid = 0.997269663;                  """Siderial day in days"""
-day_sol = 8.64e4;                       """Solar day = 86400 s"""
+day_sol = 8.64e4;                       """Solar day = 86400 s in SI"""
 day     = day_sol;                      """Default day == solar day = 86400 s"""
 
 # Length of a month:
@@ -211,6 +217,10 @@ Mpc = 1000*kpc;                         """Megaparsec in metres"""
 Gpc = 1000*Mpc;                         """Gigaparsec in metres"""
 
 ly = 9.4607305e15;                      """Light year (c * julian year) in metres"""
+kly = 1000*ly;                          """Kilolightyear in metres"""
+Mly = 1000*kly;                         """Megalightyear in metres"""
+Gly = 1000*Mly;                         """Gigalightyear in metres"""
+
 
 
 # Cosmological:
