@@ -144,6 +144,14 @@ dow_nl       = __np.array(['zondag','maandag','dinsdag','woensdag','donderdag','
 dow_nl_abr   = __np.array(['zo','ma','di','wo','do','vr','za']);                                        """Lower-case two-letter day-of-week abbreviations in Dutch."""  # (7x2)
 dow_nl_abr4  = __np.array(['zon','maa','din','woe','don','vrij','zat']);                                """Lower-case four-letter day-of-week abbreviations in Dutch."""  # (7x4)
 
+# Aliases:
+weekdays_en       = dow_en;         """Capitalised day-of-week names in English."""  # (7x9)
+weekdays_en_abr   = dow_en_abr;     """Capitalised three-letter day-of-week abbreviations in English."""  # (7x3)
+weekdays_en_abr2  = dow_en_abr2;    """Capitalised two-letter day-of-week abbreviations in English."""  # (7x2)
+weekdays_nl       = dow_nl;         """Lower-case day-of-week names in Dutch."""  # (7x9)
+weekdays_nl_abr   = dow_nl_abr;     """Lower-case two-letter day-of-week abbreviations in Dutch."""  # (7x2)
+weekdays_nl_abr4  = dow_nl_abr4;    """Lower-case four-letter day-of-week abbreviations in Dutch."""  # (7x4)
+
 
 dst_en = __np.array(['standard time','daylight-savings time']);  """English DST timezone names."""
 dst_nl = __np.array(['wintertijd','zomertijd']);                 """Dutch DST timezone names."""
