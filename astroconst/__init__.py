@@ -66,29 +66,33 @@ G    = aa.g;                  """Newton's gravitational constant"""
 
 
 # Physical constants - SI:
-gr      =  9.80665;                            """Mean gravitational acceleration at the Earth's surface, m s^-2"""
+gr       =  9.80665;                            """Mean gravitational acceleration at the Earth's surface, m s^-2"""
 
-amu     =  1.660539040e-27;                    """Atomic mass unit; (mass of C12 atom)/12, 1.6605402e-27 kg"""
-m_h     =  1.007825*amu;                       """Mass of a hydrogen atom"""
-m_e     =  9.1093837e-31;                      """Mass of an electron"""
+amu      =  1.660539040e-27;                    """Atomic mass unit; (mass of C12 atom)/12, 1.6605402e-27 kg"""
+m_h      =  1.007825*amu;                       """Mass of a hydrogen atom (kg)"""
+m_e      =  9.1093837e-31;                      """Mass of an electron (kg)"""
+a_0      =  5.2917721e-11;                      """Bohr radius of the atom (m)"""
+bohr_rad =  a_0;                                """Bohr radius of the atom (m)"""
+R_inf    =  10973731.568157;                    """Rydberg constant (m^-1)"""
+rydberg  =  R_inf;                              """Rydberg constant (m^-1)"""
 
-k_b     =  1.38064852e-23;                     """Boltzmann constant, 1.380658e-23 J/K"""
-h_p     =  6.626070040e-34;                    """Planck's constant, 6.6260755e-34 J s"""
-h_bar   =  h_p/pi2;                            """Reduced Planck constant, J s"""
+k_b      =  1.38064852e-23;                     """Boltzmann constant, 1.380658e-23 J/K"""
+h_p      =  6.626070040e-34;                    """Planck's constant, 6.6260755e-34 J s"""
+h_bar    =  h_p/pi2;                            """Reduced Planck constant, J s"""
 
-a_rad   =  k_b**4/((c*h_p)**3) * 8*pi**5/15;   """Radiation (density) constant, 7.56591e-16 J m^-3 K^-4"""
-sigma   =  a_rad*c*0.25;                       """Stefan-Boltzmann constant, 5.67051e-8 J m^-2 K^-4 s^-1"""
+a_rad    =  k_b**4/((c*h_p)**3) * 8*pi**5/15;   """Radiation (density) constant, 7.56591e-16 J m^-3 K^-4"""
+sigma    =  a_rad*c*0.25;                       """Stefan-Boltzmann constant, 5.67051e-8 J m^-2 K^-4 s^-1"""
 
-eV      = 1.6021766208e-19;                    """Elementary (electron) charge in Coulomb;  ElectronVolt: 1.6021766e-19 J"""
-ec      = eV;                                  """Elementary (electron) charge in Coulomb;  ElectronVolt: 1.6021766e-19 J"""
+eV       = 1.6021766208e-19;                    """Elementary (electron) charge in Coulomb;  ElectronVolt: 1.6021766e-19 J"""
+ec       = eV;                                  """Elementary (electron) charge in Coulomb;  ElectronVolt: 1.6021766e-19 J"""
 
-nm      = 1e-9;                                """Nanometer in SI (m)"""
-mum     = 1e-6;                                """Micrometer in SI (m)"""
-mm      = 1e-3;                                """Millimeter in SI (m)"""
-cm      = 1e-2;                                """Centimeter in SI (m)"""
-km      = 1e3;                                 """Kilometer in SI (m)"""
+nm       = 1e-9;                                """Nanometer in SI (m)"""
+mum      = 1e-6;                                """Micrometer in SI (m)"""
+mm       = 1e-3;                                """Millimeter in SI (m)"""
+cm       = 1e-2;                                """Centimeter in SI (m)"""
+km       = 1e3;                                 """Kilometer in SI (m)"""
 
-c2k     = 273.15;                              """Degrees Celcius to Kelvin (shift)"""
+c2k      = 273.15;                              """Degrees Celcius to Kelvin (shift)"""
 
 
 # Non-SI units
