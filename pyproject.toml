@@ -7,7 +7,7 @@ packages = ["astroconst"]
 
 [project]
 name = "astroconst"
-version = "0.0.13"
+version = "0.0.14"
 authors = [ { name="Marc van der Sluys", email="git@vandersluys.nl" } ]
 description = "A Python package that provides astronomical constants."
 readme   = "README.md"
