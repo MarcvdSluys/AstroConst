@@ -69,7 +69,7 @@ G    = aa.g;                  """Newton's gravitational constant"""
 gr       =  9.80665;                            """Mean gravitational acceleration at the Earth's surface, m s^-2"""
 
 amu      =  1.660539040e-27;                    """Atomic mass unit; (mass of C12 atom)/12, 1.6605402e-27 kg"""
-m_h      =  1.007825*amu;                       """Mass of a hydrogen atom (kg)"""
+m_h      =  1.00782503214*amu;                  """Mass of a hydrogen atom (kg) = m_p + m_e - 13.6eV/c^2"""
 m_e      =  9.1093837e-31;                      """Mass of an electron (kg)"""
 a_0      =  5.2917721e-11;                      """Bohr radius of the atom (m)"""
 bohr_rad =  a_0;                                """Bohr radius of the atom (m)"""
@@ -86,6 +86,11 @@ sigma    =  a_rad*c*0.25;                       """Stefan-Boltzmann constant, 5.
 eV       = 1.6021766208e-19;                    """Elementary (electron) charge in Coulomb;  ElectronVolt: 1.6021766e-19 J"""
 ec       = eV;                                  """Elementary (electron) charge in Coulomb;  ElectronVolt: 1.6021766e-19 J"""
 
+epsilon0 = 8.8541878e-12;                       """Permittivity of vacuum in A^2 s^4 / kg m^3"""
+mu0      = 1.2566371e-06;                       """Permeability of vacuum in kg m / A^2 s^2"""
+
+fm       = 1e-15;                               """Femtometer in SI (m)"""
+pm       = 1e-12;                               """Picometer in SI (m)"""
 nm       = 1e-9;                                """Nanometer in SI (m)"""
 mum      = 1e-6;                                """Micrometer in SI (m)"""
 mm       = 1e-3;                                """Millimeter in SI (m)"""
@@ -101,6 +106,8 @@ eV      = 1.6021766e-19;                       """1 eV in Joule"""
 keV     = 1000*eV;                             """1 keV in Joule"""
 MeV     = 1000*keV;                            """1 MeV in Joule"""
 GeV     = 1000*MeV;                            """1 GeV in Joule"""
+
+gauss   = 1e-4;                                """1 Gauss in Tesla"""
 
 
 
