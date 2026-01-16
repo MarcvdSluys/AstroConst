@@ -69,8 +69,12 @@ G    = aa.g;                  """Newton's gravitational constant"""
 gr       =  9.80665;                            """Mean gravitational acceleration at the Earth's surface, m s^-2"""
 
 amu      =  1.660539040e-27;                    """Atomic mass unit; (mass of C12 atom)/12, 1.6605402e-27 kg"""
+m_pr     =  1.6726219e-27;                      """Proton mass (kg)"""
 m_h      =  1.00782503214*amu;                  """Mass of a hydrogen atom (kg) = m_p + m_e - 13.6eV/c^2"""
+
 m_e      =  9.1093837e-31;                      """Mass of an electron (kg)"""
+sigma_T  =  6.6524587e-29;                      """Thomson cross section of a free electron (m^2)"""
+
 a_0      =  5.2917721e-11;                      """Bohr radius of the atom (m)"""
 bohr_rad =  a_0;                                """Bohr radius of the atom (m)"""
 R_inf    =  10973731.568157;                    """Rydberg constant (m^-1)"""
@@ -227,6 +231,9 @@ Lo    = l_sun;                          """Solar luminosity in SI (W)"""
 
 
 sol_const = 1361.5;                     """Solar constant in W/m^2 (Wikipedia)"""
+
+
+Mo_per_year = Mo/year;                  """Solar mass per year (for mass transfer, accretion)"""
 
 
 # Astrophysical distances:
